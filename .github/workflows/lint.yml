@@ -19,3 +19,7 @@ jobs:
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Running inline script
+        run: |
+          mkdir sample
+          ls -l
