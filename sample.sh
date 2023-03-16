@@ -1,3 +1,3 @@
 mkdir samplesh
-ls -l
+ls 
 echo "file created"
