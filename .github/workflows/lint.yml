@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  build-artifacts:
+  archive-build-artifacts:
     runs-on: ubuntu-latest
     steps:
       - name: Creating folder
@@ -19,7 +19,7 @@ jobs:
           echo 'second' >second.html
           cd ..
       - name:  using upload artifacts  gihub action
-        uses: action/upload-artifacts@v2
+        uses: actions/upload-artifacts@v2
         with: 
           name: files-for-download
           path: config
