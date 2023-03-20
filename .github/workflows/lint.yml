@@ -22,7 +22,7 @@ jobs:
           cd ..
           
       - name:  using upload artifacts  gihub action
-        uses: actions/upload-artifacts@v2
+        uses: actions/upload-artifact@v2
         with: 
           name: files-for-download
           path: config
