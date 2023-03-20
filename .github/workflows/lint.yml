@@ -1,20 +1,27 @@
-name: Super-Linter
+name: Artifacts-demo
 
 on:  
   push:
-  pull_request:
     branches:
       - master
 
 jobs:
-  super-lint:
-    name: Lint code base
+  build-artifacts:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Creating folder
+        run: mkdir config
         
-      - name: Running script from repo
-        run: sh ./sample.sh
+      - name: publishin artifacts to folder
+        run: | 
+          cd  config
+          echo 'first' > first.html
+          echo 'second' >second.html
+          cd ..
+      - name:  using upload artifacts  gihub action
+        uses: action/upload-artifacts@v2
+        with: 
+          name: files-for-download
+          path: config
         
         
