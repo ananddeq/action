@@ -1,0 +1,27 @@
+name: Release trigger
+
+on:  
+  push:
+    tags:
+      - '1.*'
+
+jobs:
+
+  archive-build-artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Creating folder
+        run: mkdir config
+        
+      - name: publishing artifacts to folder
+        run: | 
+          cd  config
+          echo 'first' > first.html
+          echo 'second' >second.html
+          cd ..
+          
+      - name:  using upload artifacts  gihub action
+        uses: actions/upload-artifact@v2
+        with: 
+          name: files-for-download
+          path: config
