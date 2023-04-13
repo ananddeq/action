@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def start():
-    return "Welcome to TAJ residency"
+    return "Welcome to Daga residency"
 
 
 @app.get("/api")
